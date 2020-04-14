@@ -1,5 +1,5 @@
 <template>
-    <svg v-if="icon" class="icon">
+    <svg v-if="icon in icons" class="icon">
         <use :xlink:href="'#i-'+icon"></use>
     </svg>
 </template>
@@ -12,6 +12,19 @@
     // import 'src/assets/icons/setting.svg'
 
     export default {
+        data: function () {
+            return {
+                icons: {
+                    down: "down",
+                    setting:"setting",
+                    download:"download",
+                    right:"right",
+                    left:"left",
+                    like:"like",
+                    loading:"loading"
+                }
+            }
+        },
         props: ['icon']
     }
 </script>
