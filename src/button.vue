@@ -8,7 +8,18 @@
 </template>
 <script>
     export default {
-        props: ["icon", "iconPosition"]
+        props: {
+            icon:{
+                type:String
+            },
+            iconPosition:{
+                type:String,
+                default:'left',
+                validator(value){
+                   return !(value !== 'left' && value !== 'right');
+                }
+            }
+        }
     }
 </script>
 
