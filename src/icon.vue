@@ -15,13 +15,13 @@
         data: function () {
             return {
                 icons: {
-                    down: "down",
-                    setting:"setting",
-                    download:"download",
-                    right:"right",
-                    left:"left",
-                    like:"like",
-                    loading:"loading"
+                    "down": "down",
+                    "setting":"setting",
+                    "download":"download",
+                    "right":"right",
+                    "left":"left",
+                    "like":"like",
+                    "load":"load"
                 }
             }
         },
