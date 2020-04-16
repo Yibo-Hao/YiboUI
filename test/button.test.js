@@ -1,4 +1,4 @@
-import { describe } from "mocha";
+import { describe,it } from "mocha";
 
 const expect = chai.expect;
 import Vue from "vue";
