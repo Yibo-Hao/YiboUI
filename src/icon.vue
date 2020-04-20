@@ -7,6 +7,7 @@
 
 import "./svg";
 export default {
+  name:"yibo-icon",
   data: function() {
     return {
       icons: {
@@ -16,7 +17,9 @@ export default {
         right: "right",
         left: "left",
         like: "like",
-        load: "load"
+        load: "load",
+        info:"info",
+        error:"error"
       }
     };
   },
