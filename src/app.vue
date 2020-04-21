@@ -27,9 +27,9 @@
       <g-button icon="right" icon-position="right">下一页</g-button>
     </g-button-group>
     <div>
-      <g-input value="xxx"></g-input>
-      <g-input value="xxx" error="名字不少于两个字"></g-input>
-      <g-input value="xxx" :disabled="true"></g-input>
+      <g-input v-model="message"></g-input>
+      <g-input v-model="message" error="名字不少于两个字"></g-input>
+      <g-input v-model="message" :disabled="true" ></g-input>
     </div>
   </div>
 </template>
@@ -40,9 +40,15 @@ export default {
     return {
       loading1: false,
       loading2: false,
-      loading3: false
+      loading3: false,
+      message: 'hi'
     };
   },
+  methods:{
+    xxx(e){
+      console.log(e)
+    }
+  }
 };
 </script>
 <style lang="scss">
