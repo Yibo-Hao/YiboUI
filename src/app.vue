@@ -29,7 +29,22 @@
     <div>
       <g-input v-model="message"></g-input>
       <g-input v-model="message" error="名字不少于两个字"></g-input>
-      <g-input v-model="message" :disabled="true" ></g-input>
+      <g-input v-model="message" :disabled="true"></g-input>
+    </div>
+    <div class="grid">
+      <g-row>
+        <g-col span="2"></g-col>
+        <g-col span="22"></g-col>
+      </g-row>
+      <g-row>
+        <g-col></g-col>
+        <g-col></g-col>
+      </g-row>
+      <g-row>
+        <g-col span="8"></g-col>
+        <g-col span="8"></g-col>
+        <g-col span="8"></g-col>
+      </g-row>
     </div>
   </div>
 </template>
@@ -41,13 +56,8 @@ export default {
       loading1: false,
       loading2: false,
       loading3: false,
-      message: 'hi'
+      message: "hi"
     };
-  },
-  methods:{
-    xxx(e){
-      console.log(e)
-    }
   }
 };
 </script>
