@@ -14,6 +14,9 @@ import TabsNav from "./tabs/tabs-nav";
 import TabsItems from "./tabs/tabs-items";
 import TabsPanel from "./tabs/tabs-panel";
 import TabsContent from "./tabs/tabs-content";
+import Row from './grid/row'
+import Col from './grid/col'
+
 
 Vue.component("g-button", Button);
 Vue.component("g-icon", Icon);
@@ -27,6 +30,8 @@ Vue.component("g-tabs-panel", TabsPanel);
 Vue.component("g-tabs-content", TabsContent);
 Vue.component("g-tabs-items", TabsItems);
 Vue.component("g-popover", Popover);
+Vue.component("g-row", Row);
+Vue.component("g-col", Col);
 
 new Vue({
   el: "#app",
