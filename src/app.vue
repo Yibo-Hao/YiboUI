@@ -42,7 +42,7 @@ export default {
       loading2: false,
       loading3: false
     };
-  }
+  },
 };
 </script>
 <style lang="scss">
@@ -52,7 +52,7 @@ export default {
   margin: 2em;
   display: flex;
   flex-direction: column;
-  >div{
+  > div {
     margin: 1em;
   }
 }

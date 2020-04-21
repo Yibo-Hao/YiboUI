@@ -1,32 +1,42 @@
 <template>
-  <div class="wrapper" :class="{error}">
+  <div class="wrapper" :class="{ error }">
     <label>
-      <input :value="value"
-              type="text"
-             :disabled="disabled"/>
+      <input
+        :value="value"
+        type="text"
+        :disabled="disabled"
+        :readonly="readonly"
+        @change="$emit('change', $event)"
+        @input="$emit('input', $event)"
+        @focus="$emit('focus', $event)"
+        @blur="$emit('blur', $event)"
+      />
     </label>
     <g-icon icon="error" v-if="error"></g-icon>
-    <span v-if="error">{{error}}</span>
+    <span v-if="error" class="errorMessage">{{ error }}</span>
   </div>
 </template>
 <script>
+import Icon from "./icon";
 export default {
   name: "yibo-input",
+  components: {
+    "g-icon": Icon
+  },
   props: {
     value: {
       type: String
     },
-    disabled:{
-      type:Boolean,
-      default:false
+    disabled: {
+      type: Boolean,
+      default: false
     },
-    readonly:{
-      type:Boolean,
-      default:false
+    readonly: {
+      type: Boolean,
+      default: false
     },
-    error:{
-      type:String,
-      default:''
+    error: {
+      type: String
     }
   }
 };
@@ -37,9 +47,11 @@ export default {
   font-size: $font-size;
   display: inline-flex;
   align-items: center;
-  :not(:last-child){margin-right: 0.5em}
-  &.error{
-    input{
+  :not(:last-child) {
+    margin-right: 0.5em;
+  }
+  &.error {
+    input {
       border-color: $red;
     }
   }
@@ -56,7 +68,8 @@ export default {
       box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
       outline: none;
     }
-    &[disabled],&[readonly]{
+    &[disabled],
+    &[readonly] {
       border-color: #aaa;
       color: #aaa;
       cursor: not-allowed;
