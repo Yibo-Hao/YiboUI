@@ -31,19 +31,19 @@
       <g-input v-model="message" error="名字不少于两个字"></g-input>
       <g-input v-model="message" :disabled="true"></g-input>
     </div>
-    <div class="grid">
-      <g-row>
-        <g-col span="2"></g-col>
-        <g-col span="22"></g-col>
+    <div class="grid" style="border: 1px solid red">
+      <g-row gutter="20">
+        <g-col span="2">1</g-col>
+        <g-col span="22">1</g-col>
       </g-row>
-      <g-row>
-        <g-col></g-col>
-        <g-col></g-col>
+      <g-row gutter="20">
+        <g-col>1</g-col>
+        <g-col>1</g-col>
       </g-row>
-      <g-row>
-        <g-col span="8"></g-col>
-        <g-col span="8"></g-col>
-        <g-col span="8"></g-col>
+      <g-row gutter="20">
+        <g-col span="8">1</g-col>
+        <g-col span="8">1</g-col>
+        <g-col span="8">1</g-col>
       </g-row>
     </div>
   </div>
