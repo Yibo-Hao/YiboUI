@@ -56,7 +56,6 @@ export default {
 .row {
   display: flex;
   height: 100px;
-  border: 1px solid green;
   &.align-center {
     align-items: center;
   }
