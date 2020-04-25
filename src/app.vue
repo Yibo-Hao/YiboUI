@@ -41,6 +41,16 @@
         <g-col>1</g-col>
       </g-row>
     </div>
+    <div class="app-layout">
+      <g-layout style="height: 50vh">
+        <g-header>1</g-header>
+        <g-layout>
+          <g-side>1</g-side>
+          <g-content>2</g-content>
+        </g-layout>
+        <g-footer>1</g-footer>
+      </g-layout>
+    </div>
   </div>
 </template>
 <script>

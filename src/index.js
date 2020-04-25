@@ -16,6 +16,11 @@ import TabsPanel from "./tabs/tabs-panel";
 import TabsContent from "./tabs/tabs-content";
 import Row from './grid/row'
 import Col from './grid/col'
+import Layout from "./layout/layout"
+import Side from "./layout/side"
+import Content from "./layout/content"
+import Header from "./layout/header"
+import Footer from "./layout/footer"
 
 Vue.component("g-button", Button);
 Vue.component("g-icon", Icon);
@@ -31,12 +36,14 @@ Vue.component("g-tabs-items", TabsItems);
 Vue.component("g-popover", Popover);
 Vue.component("g-row", Row);
 Vue.component("g-col", Col);
+Vue.component("g-layout", Layout);
+Vue.component("g-header", Header);
+Vue.component("g-footer", Footer);
+Vue.component("g-content", Content);
+Vue.component("g-side", Side);
+
 
 new Vue({
   el: "#app",
   render: h => h(App)
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 基本实现row 和 col 的功能
