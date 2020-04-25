@@ -29,16 +29,16 @@
     <div>
       <g-input v-model="message"></g-input>
       <g-input v-model="message" error="名字不少于两个字"></g-input>
-      <g-input v-model="message" :disabled="true" ></g-input>
+      <g-input v-model="message" :disabled="true"></g-input>
     </div>
     <div class="app-layout">
-      <g-layout style="height: 50vh">
-        <g-header>1</g-header>
+      <g-layout>
+        <g-header><div class="header">header</div></g-header>
         <g-layout>
-          <g-side>1</g-side>
-          <g-content>2</g-content>
+          <g-side><div class="side">side</div></g-side>
+          <g-content><div class="content">content</div></g-content>
         </g-layout>
-        <g-footer>1</g-footer>
+        <g-footer><div class="footer">footer</div></g-footer>
       </g-layout>
     </div>
   </div>
@@ -51,9 +51,9 @@ export default {
       loading1: false,
       loading2: false,
       loading3: false,
-      message: 'hi'
+      message: "hi"
     };
-  },
+  }
 };
 </script>
 <style lang="scss">
@@ -66,5 +66,29 @@ export default {
   > div {
     margin: 1em;
   }
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 </style>
