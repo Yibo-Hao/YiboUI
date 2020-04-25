@@ -30,6 +30,7 @@
       <g-input v-model="message"></g-input>
       <g-input v-model="message" error="名字不少于两个字"></g-input>
       <g-input v-model="message" :disabled="true"></g-input>
+
     </div>
     <div class="grid" style="border: 1px solid black">
       <g-row gutter="20" align="center" justify="center">
@@ -40,15 +41,16 @@
         <g-col>1</g-col>
         <g-col>1</g-col>
       </g-row>
+
     </div>
     <div class="app-layout">
-      <g-layout style="height: 50vh">
-        <g-header>1</g-header>
+      <g-layout>
+        <g-header><div class="header">header</div></g-header>
         <g-layout>
-          <g-side>1</g-side>
-          <g-content>2</g-content>
+          <g-side><div class="side">side</div></g-side>
+          <g-content><div class="content">content</div></g-content>
         </g-layout>
-        <g-footer>1</g-footer>
+        <g-footer><div class="footer">footer</div></g-footer>
       </g-layout>
     </div>
   </div>
@@ -64,5 +66,32 @@ export default {
   display: flex;
   flex-direction: column;
 }
+<<<<<<< HEAD
 
+=======
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+>>>>>>> 布局美化完成
 </style>

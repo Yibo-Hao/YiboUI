@@ -8,4 +8,9 @@ export default {
   name: "yibo-footer"
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.footer {
+  background: #7dbcea;
+  min-height: 64px;
+}
+</style>
