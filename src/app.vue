@@ -31,6 +31,16 @@
       <g-input v-model="message" error="名字不少于两个字"></g-input>
       <g-input v-model="message" :disabled="true" ></g-input>
     </div>
+    <div class="app-layout">
+      <g-layout style="height: 50vh">
+        <g-header>1</g-header>
+        <g-layout>
+          <g-side>1</g-side>
+          <g-content>2</g-content>
+        </g-layout>
+        <g-footer>1</g-footer>
+      </g-layout>
+    </div>
   </div>
 </template>
 <script>
@@ -44,11 +54,6 @@ export default {
       message: 'hi'
     };
   },
-  methods:{
-    xxx(e){
-      console.log(e)
-    }
-  }
 };
 </script>
 <style lang="scss">
