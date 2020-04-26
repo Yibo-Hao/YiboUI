@@ -16,9 +16,9 @@ export default {
       message: "hi"
     };
   },
-  methods:{
-    toast(){
-      this.$toast("toast!!!")
+  methods: {
+    toast() {
+      this.$toast("toast!!!",{position:"middle"});
     }
   }
 };
