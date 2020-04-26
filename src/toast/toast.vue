@@ -1,15 +1,21 @@
 <template>
-  <div class="toast">
-    <slot></slot>
-    <span class="line"></span>
-    <span v-if="closeButton" class="close"
-    @click="clickClose"
-    > {{ closeButton.text }}</span>
+  <div class="toast" :class="toastClass">
+    <slot v-if="!enableHtml"></slot>
+    <div v-html="this.$slots.default[0]" v-else></div>
+    <span class="line" ref="line"></span>
+    <span v-if="closeButton" class="close" @click="clickClose">
+      {{ closeButton.text }}</span
+    >
   </div>
 </template>
 <script>
 export default {
   name: "yibo-toast",
+  computed: {
+    toastClass() {
+      return { [`${this.position}`]: true };
+    }
+  },
   props: {
     autoClose: {
       type: Boolean,
@@ -29,6 +35,17 @@ export default {
           }
         };
       }
+    },
+    enableHtml: {
+      type: Boolean,
+      default: false
+    },
+    position: {
+      type: String,
+      default: "top",
+      validator(value) {
+        return ["top", "middle", "bottom"].includes(value);
+      }
     }
   },
   mounted() {
@@ -37,14 +54,20 @@ export default {
         this.close();
       }, this.autoCloseDelay * 1000);
     }
+    this.$nextTick(() => {
+      this.$refs.line.style.height = getComputedStyle(
+        this.$refs.line.parentElement
+      ).height;
+    });
   },
   methods: {
     close() {
       this.$el.remove();
       this.$destroy();
     },
-    clickClose(){
-      this.closeButton.callback(this)
+    clickClose() {
+      this.close();
+      this.closeButton.callback(this);
     }
   }
 };
@@ -57,25 +80,25 @@ export default {
   position: fixed;
   color: white;
   padding: 0 16px;
-  top: 0;
   left: 50%;
-  transition: translateX(-50%);
   font-size: $font-size;
   line-height: 1.8;
-  height: $toast-height;
+  min-height: $toast-height;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
   background: $toast-bg;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
-  .close{
+  .close {
     padding-left: 16px;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
-  .line{
-    height: 100%;
-    border-left: 1px solid #666;
-    margin-left: 16px;
-  }
+  .line {    height: 100%;    border-left: 1px solid #666;
+    margin-left: 16px;  }
+  &.top {    top: 0;transform: translateX(-50%);  }
+  &.middle {    top: 50%;    transform: translate(-50%, -50%);  }
+  &.bottom {    bottom: 0;    transform: translateX(-50%);  }
 }
 </style>

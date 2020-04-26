@@ -3,7 +3,20 @@
 </template>
 <script>
 export default {
-  name: "yibo-app"
+  name: "yibo-app",
+  data() {
+    return {
+      loading1: false,
+      loading2: false,
+      loading3: false,
+      message: "hi"
+    };
+  },
+  methods: {
+    toast() {
+      this.$toast("toast!!!",{position:"middle"});
+    }
+  }
 };
 </script>
 <style lang="scss">
