@@ -6,6 +6,8 @@ import ButtonGroup from "./button-group";
 import Input from "./input";
 import Collapse from "./collapse/collapse";
 import CollapseItem from "./collapse/collapse-item";
+import toastplugin from "./toast/toastplugin";
+Vue.use(toastplugin);
 Vue.component("g-button", Button);
 Vue.component("g-icon", Icon);
 Vue.component("g-button-group", ButtonGroup);
