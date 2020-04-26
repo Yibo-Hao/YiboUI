@@ -1,35 +1,7 @@
 <template>
   <div class="app">
-    <div>
-      <g-button
-        :icon="'setting'"
-        :icon-position="'left'"
-        :loading="loading1"
-        @click.native="loading1 = !loading1"
-      >
-        设置
-      </g-button>
-      <g-button
-        :icon="'setting'"
-        :icon-position="'right'"
-        :loading="loading2"
-        @click.native="loading2 = !loading2"
-      >
-        设置
-      </g-button>
-      <g-button :loading="loading3" @click.native="loading3 = !loading3">
-        设置
-      </g-button>
-    </div>
-    <g-button-group>
-      <g-button icon="left">上一页</g-button>
-      <g-button>更多</g-button>
-      <g-button icon="right" icon-position="right">下一页</g-button>
-    </g-button-group>
-    <div>
-      <g-input v-model="message"></g-input>
-      <g-input v-model="message" error="名字不少于两个字"></g-input>
-      <g-input v-model="message" :disabled="true" ></g-input>
+    <div class="toast">
+      <button @click="toast">click!</button>
     </div>
   </div>
 </template>
@@ -41,12 +13,12 @@ export default {
       loading1: false,
       loading2: false,
       loading3: false,
-      message: 'hi'
+      message: "hi"
     };
   },
   methods:{
-    xxx(e){
-      console.log(e)
+    toast(){
+      this.$toast("toast!!!")
     }
   }
 };
