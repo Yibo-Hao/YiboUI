@@ -63,6 +63,7 @@ export default {
   methods: {
     close() {
       this.$el.remove();
+      this.$emit('beforeClose');
       this.$destroy();
     },
     clickClose() {
@@ -95,10 +96,22 @@ export default {
     white-space: nowrap;
     flex-shrink: 0;
   }
-  .line {    height: 100%;    border-left: 1px solid #666;
-    margin-left: 16px;  }
-  &.top {    top: 0;transform: translateX(-50%);  }
-  &.middle {    top: 50%;    transform: translate(-50%, -50%);  }
-  &.bottom {    bottom: 0;    transform: translateX(-50%);  }
+  .line {
+    height: 100%;
+    border-left: 1px solid #666;
+    margin-left: 16px;
+  }
+  &.top {
+    top: 0;
+    transform: translateX(-50%);
+  }
+  &.middle {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &.bottom {
+    bottom: 0;
+    transform: translateX(-50%);
+  }
 }
 </style>
