@@ -61,7 +61,6 @@ export default {
       }, this.autoCloseDelay * 1000);
     }
     this.$nextTick(() => {
-      console.log(this.$refs);
       this.$refs.line.style.height = getComputedStyle(this.$refs.parent).height;
     });
   },
