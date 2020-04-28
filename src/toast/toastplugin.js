@@ -5,9 +5,9 @@ function createToast({ Vue, message, toastoptions, onClose }) {
   let toast = new Constructor({
     propsData: toastoptions
   });
-  toast.$slots.default = [message];
+  toast.$slots.toast = message;
   toast.$mount();
-  toast.$on("beforeClose",onClose);
+  toast.$on("beforeClose", onClose);
   document.body.appendChild(toast.$el);
   return toast;
 }
@@ -30,3 +30,4 @@ export default {
     };
   }
 };
+

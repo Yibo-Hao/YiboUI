@@ -1,11 +1,13 @@
 <template>
-  <div class="toast" :class="toastClass">
-    <slot v-if="!enableHtml"></slot>
-    <div v-html="this.$slots.default[0]" v-else></div>
-    <span class="line" ref="line"></span>
-    <span v-if="closeButton" class="close" @click="clickClose">
-      {{ closeButton.text }}</span
-    >
+  <div :class="{ fade: fade }">
+    <div class="toast" :class="toastClass" ref="parent">
+      <slot v-if="!enableHtml" name="toast"></slot>
+      <div v-html="this.$slots.toast" v-if="enableHtml"></div>
+      <span class="line" ref="line"></span>
+      <span v-if="closeButton" class="close" @click="clickClose">
+        {{ closeButton.text }}</span
+      >
+    </div>
   </div>
 </template>
 <script>
@@ -17,6 +19,10 @@ export default {
     }
   },
   props: {
+    fade: {
+      type: Boolean,
+      default: true
+    },
     autoClose: {
       type: Boolean,
       default: true
@@ -55,15 +61,14 @@ export default {
       }, this.autoCloseDelay * 1000);
     }
     this.$nextTick(() => {
-      this.$refs.line.style.height = getComputedStyle(
-        this.$refs.line.parentElement
-      ).height;
+      console.log(this.$refs);
+      this.$refs.line.style.height = getComputedStyle(this.$refs.parent).height;
     });
   },
   methods: {
     close() {
       this.$el.remove();
-      this.$emit('beforeClose');
+      this.$emit("beforeClose");
       this.$destroy();
     },
     clickClose() {
@@ -74,6 +79,17 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.fade {
+  animation: fade 1s linear;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .toast {
   $font-size: 14px;
   $toast-height: 40px;
@@ -104,6 +120,8 @@ export default {
   &.top {
     top: 0;
     transform: translateX(-50%);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
   &.middle {
     top: 50%;
@@ -112,6 +130,8 @@ export default {
   &.bottom {
     bottom: 0;
     transform: translateX(-50%);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 }
 </style>
