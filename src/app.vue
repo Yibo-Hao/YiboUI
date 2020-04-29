@@ -1,15 +1,30 @@
 <template>
-  <div class="app"></div>
+  <div class="app">
+    <g-tabs :selected.sync="selectedTab" direction="column">
+      <g-tabs-nav>
+        <template v-slot:items>
+          <g-tabs-items tagName="vehicle">vehicle</g-tabs-items>
+          <g-tabs-items tagName="girl">girl</g-tabs-items>
+          <g-tabs-items tagName="sports">sports</g-tabs-items>
+        </template>
+        <template v-slot:actions>
+            settings
+        </template>
+      </g-tabs-nav>
+      <g-tabs-content>
+        <g-tabs-panel></g-tabs-panel>
+        <g-tabs-panel></g-tabs-panel>
+        <g-tabs-panel></g-tabs-panel>
+      </g-tabs-content>
+    </g-tabs>
+  </div>
 </template>
 <script>
 export default {
   name: "yibo-app",
   data() {
     return {
-      loading1: false,
-      loading2: false,
-      loading3: false,
-      message: "hi"
+      selectedTab:"",
     };
   },
   methods: {
