@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <g-tabs :selected.sync="selectedTab" direction="column">
+    <g-tabs :selected-tab.sync="selectedTab" direction="column">
       <g-tabs-nav>
         <template v-slot:items>
           <g-tabs-items tagName="vehicle">vehicle</g-tabs-items>
@@ -8,13 +8,13 @@
           <g-tabs-items tagName="sports">sports</g-tabs-items>
         </template>
         <template v-slot:actions>
-            settings
+          settings
         </template>
       </g-tabs-nav>
       <g-tabs-content>
-        <g-tabs-panel></g-tabs-panel>
-        <g-tabs-panel></g-tabs-panel>
-        <g-tabs-panel></g-tabs-panel>
+        <g-tabs-panel tagName="vehicle">vehicle news</g-tabs-panel>
+        <g-tabs-panel tagName="girl"> girl news</g-tabs-panel>
+        <g-tabs-panel tagName="sports">sports news</g-tabs-panel>
       </g-tabs-content>
     </g-tabs>
   </div>
@@ -24,7 +24,7 @@ export default {
   name: "yibo-app",
   data() {
     return {
-      selectedTab:"",
+      selectedTab: "vehicle"
     };
   },
   methods: {

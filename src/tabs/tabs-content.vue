@@ -6,7 +6,6 @@
 <script>
 export default {
   name: "yibo-tabs-content",
-    inject:['eventBus'],
 };
 </script>
-<style lang="scss"></style>
+<style lang="scss" scoped></style>

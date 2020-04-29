@@ -9,10 +9,6 @@
 <script>
 export default {
   name: "yibo-tabs-nav",
-  inject: ["eventBus"],
-  created() {
-    this.eventBus.$on("update:name", name);
-  }
 };
 </script>
 <style lang="scss" scoped>

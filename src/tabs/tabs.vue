@@ -13,7 +13,7 @@ export default {
     };
   },
   props: {
-    selected: {
+    selectedTab: {
       type: String,
       required: true
     },
@@ -29,6 +29,13 @@ export default {
     return {
       eventBus: this.eventBus
     };
+  },
+  mounted() {
+    this.eventBus.$emit("update:selectedTab", this.selectedTab);
+    this.eventBus.$on("update:selectedTab", (name)=>{
+      this.$emit("update:selectedTab", name)
+    });
+
   }
 };
 </script>
