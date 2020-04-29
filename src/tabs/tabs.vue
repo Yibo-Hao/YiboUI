@@ -35,7 +35,6 @@ export default {
     this.eventBus.$on("update:selectedTab", (name)=>{
       this.$emit("update:selectedTab", name)
     });
-
   }
 };
 </script>

@@ -37,7 +37,6 @@ export default {
 <style lang="scss">
 @import "src/assets/style/reset.scss";
 .app {
-  margin: 2em;
   display: flex;
   flex-direction: column;
 }

@@ -13,12 +13,12 @@ export default {
 </script>
 <style lang="scss" scoped>
 $tab-height: 40px;
+$blue: #1890ff;
 .tabs-nav {
   display: flex;
   height: $tab-height;
   align-items: center;
   justify-content: flex-start;
-  border: 1px solid red;
   > .actionsWrapper {
     margin-left: auto;
   }
