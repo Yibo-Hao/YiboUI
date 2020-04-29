@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     toast() {
-      this.$toast("toast!!!", { position: "top"});
+      this.$toast("toast!!!", { position: "top" });
     }
   }
 };
