@@ -3,6 +3,7 @@
     class="tabs-items"
     @click="changeSelectedItem"
     :class="{ active: this.active,disabled:this.disabled }"
+    :dataName="tagName"
   >
     <slot></slot>
   </div>

@@ -16,7 +16,6 @@ export default {
           style.width = barWidth + "px";
           style.left = transformAfter + "px";
         }
-
         return style;
       }
     }

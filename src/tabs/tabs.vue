@@ -32,8 +32,15 @@ export default {
   },
   mounted() {
     this.eventBus.$emit("update:selectedTab", this.selectedTab);
-    this.eventBus.$on("update:selectedTab", (name)=>{
-      this.$emit("update:selectedTab", name)
+    this.eventBus.$on("update:selectedTab", name => {
+      this.$emit("update:selectedTab", name);
+    });
+    this.$children.forEach(child => {
+      if (
+        !["yibo-tabs-nav", "yibo-tabs-content"].includes(child.$options.name)
+      ) {
+        throw "检查你的tabs组件里面是否是nav或者content";
+      }
     });
   }
 };
