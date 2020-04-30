@@ -8,7 +8,7 @@
           <g-tabs-items tagName="sports">sports</g-tabs-items>
         </template>
         <template v-slot:actions>
-          settings
+          <g-button>setting</g-button>
         </template>
       </g-tabs-nav>
       <g-tabs-content>
