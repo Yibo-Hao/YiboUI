@@ -17,13 +17,6 @@ export default {
       type: String,
       required: true
     },
-    direction: {
-      type: String,
-      default: "row",
-      validator(value) {
-        return ["row", "column"].includes(value);
-      }
-    }
   },
   provide() {
     return {

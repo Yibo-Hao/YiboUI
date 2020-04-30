@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <g-tabs :selected-tab.sync="selectedTab" direction="column">
+    <g-tabs :selected-tab.sync="selectedTab">
       <g-tabs-nav>
         <template v-slot:items>
           <g-tabs-items tagName="vehicle">vehicle</g-tabs-items>
