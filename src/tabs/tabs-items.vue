@@ -2,7 +2,7 @@
   <div
     class="tabs-items"
     @click="changeSelectedItem"
-    :class="{ active: this.active }"
+    :class="{ active: this.active,disabled:this.disabled }"
   >
     <slot></slot>
   </div>
@@ -37,17 +37,18 @@ export default {
   },
   methods: {
     changeSelectedItem() {
-      this.eventBus.$emit("update:selectedTab", this.tagName, this);
+      if (!this.disabled) {
+        this.eventBus.$emit("update:selectedTab", this.tagName, this);
+      }
     }
   },
-  watch:{
-    active:function(val){
+  watch: {
+    active: function(val) {
       if (val) {
         this.eventBus.$emit("activeVm", this);
       }
     }
   }
-
 };
 </script>
 <style lang="scss" scoped>
@@ -63,6 +64,10 @@ $blue: #1890ff;
   &.active {
     color: $blue;
     font-weight: bold;
+  }
+  &.disabled{
+    color: grey;
+    cursor: not-allowed;
   }
 }
 </style>

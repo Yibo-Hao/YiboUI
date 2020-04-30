@@ -4,7 +4,7 @@
       <g-tabs-nav>
         <template v-slot:items>
           <g-tabs-items tagName="vehicle">vehicle</g-tabs-items>
-          <g-tabs-items tagName="girl">girl</g-tabs-items>
+          <g-tabs-items tagName="girl" >girl</g-tabs-items>
           <g-tabs-items tagName="sports">sports</g-tabs-items>
         </template>
         <template v-slot:actions>
