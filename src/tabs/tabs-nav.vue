@@ -4,8 +4,7 @@
     <div class="actionsWrapper">
       <slot name="actions"></slot>
     </div>
-
-    <g-tab-bar :tabs="activeVm" class="tab-bar"></g-tab-bar>
+    <g-tab-bar :tabs="activeVm" ></g-tab-bar>
   </div>
 </template>
 <script>
@@ -43,11 +42,6 @@ $blue: #1890ff;
   position: relative;
   > .actionsWrapper {
     margin-left: auto;
-  }
-  .tab-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
   }
 }
 </style>
