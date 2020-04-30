@@ -5,11 +5,14 @@
     :class="{ active: this.active }"
   >
     <slot></slot>
-    <div class="line" ref="line" :class="{ active: this.active }"></div>
   </div>
 </template>
 <script>
+import tabsBar from "./tabs-bar";
 export default {
+  components: {
+    "g-tab-bar": tabsBar
+  },
   name: "yibo-tabs-items",
   inject: ["eventBus"],
   data() {
@@ -36,7 +39,15 @@ export default {
     changeSelectedItem() {
       this.eventBus.$emit("update:selectedTab", this.tagName, this);
     }
+  },
+  watch:{
+    active:function(val){
+      if (val) {
+        this.eventBus.$emit("activeVm", this);
+      }
+    }
   }
+
 };
 </script>
 <style lang="scss" scoped>
@@ -49,16 +60,9 @@ $blue: #1890ff;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   &.active {
     color: $blue;
     font-weight: bold;
-  }
-  .line.active {
-    position: absolute;
-    bottom: 0;
-    border-bottom: 1.5px solid $blue;
-    width: 100%;
   }
 }
 </style>

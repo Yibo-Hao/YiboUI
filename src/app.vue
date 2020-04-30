@@ -11,11 +11,11 @@
           settings
         </template>
       </g-tabs-nav>
-      <g-tabs-content>
-        <g-tabs-panel tagName="vehicle">vehicle news</g-tabs-panel>
-        <g-tabs-panel tagName="girl"> girl news</g-tabs-panel>
-        <g-tabs-panel tagName="sports">sports news</g-tabs-panel>
-      </g-tabs-content>
+<!--      <g-tabs-content>-->
+<!--        <g-tabs-panel tagName="vehicle">vehicle news</g-tabs-panel>-->
+<!--        <g-tabs-panel tagName="girl"> girl news</g-tabs-panel>-->
+<!--        <g-tabs-panel tagName="sports">sports news</g-tabs-panel>-->
+<!--      </g-tabs-content>-->
     </g-tabs>
   </div>
 </template>
@@ -39,5 +39,8 @@ export default {
 .app {
   display: flex;
   flex-direction: column;
+  >div{
+    margin: 1em;
+  }
 }
 </style>
