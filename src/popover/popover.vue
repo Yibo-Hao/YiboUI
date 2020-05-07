@@ -1,6 +1,6 @@
 <template>
-  <div class="popover" @click="pop">
-    <div class="content-wrapper" v-if="visible">
+  <div class="popover" @click.stop="pop">
+    <div class="content-wrapper" v-if="visible" @click.stop>
       <slot></slot>
     </div>
     <slot name="reference"></slot>
@@ -8,27 +8,36 @@
 </template>
 <script>
 export default {
-    name:"yibo-popover",
+  name: "yibo-popover",
   data() {
     return { visible: false };
   },
   methods: {
     pop() {
       this.visible = !this.visible;
+      if (this.visible === true) {
+        setTimeout(() => {
+          const outClick = () => {
+            this.visible = false;
+            document.removeEventListener("click", outClick);
+          };
+          document.addEventListener("click", outClick);
+        }, 0);
+      }
     }
   }
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .popover {
   display: inline-block;
   vertical-align: top;
   position: relative;
-  .content-wrapper{
-        position: absolute;
-        bottom: 100%;
-        left: 0;
-        box-shadow: 0 0 3px rgba(0,0,0,0.5);
-    }
+  .content-wrapper {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  }
 }
 </style>
