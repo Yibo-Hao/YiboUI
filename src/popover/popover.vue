@@ -1,11 +1,6 @@
 <template>
-  <div class="popover" @click.stop="pop">
-    <div
-      class="content-wrapper"
-      v-if="visible"
-      @click.stop
-      ref="contentWrapper"
-    >
+  <div class="popover" @click="Click" ref="popover">
+    <div class="content-wrapper" v-if="visible" ref="contentWrapper">
       <slot></slot>
     </div>
     <span ref="triggerWrapper">
@@ -20,27 +15,41 @@ export default {
     return { visible: false };
   },
   methods: {
-    pop() {
-      this.visible = !this.visible;
-      if (this.visible === true) {
-        this.$nextTick(() => {
-          document.body.appendChild(this.$refs.contentWrapper);
-          let {
-            width,
-            height,
-            left,
-            top
-          } = this.$refs.triggerWrapper.getBoundingClientRect();
-          this.$refs.contentWrapper.style.left = left + window.scrollX + "px";
-          this.$refs.contentWrapper.style.top = top + window.scrollY + "px";
-          const outClick = () => {
-            this.visible = false;
-            document.removeEventListener("click", outClick);
-          };
-          document.addEventListener("click", outClick);
-        }, 0);
+    getPosition() {
+      document.body.appendChild(this.$refs.contentWrapper);
+      let { left, top } = this.$refs.triggerWrapper.getBoundingClientRect();
+      this.$refs.contentWrapper.style.left = left + window.scrollX + "px";
+      this.$refs.contentWrapper.style.top = top + window.scrollY + "px";
+    },00
+    Click(e) {
+      if (this.$refs.triggerWrapper.contains(e.target)) {
+        if (this.visible === true) {
+          this.close();
+        } else {
+          this.open();
+        }
       }
-    }
+    },
+    listenToDocument() {
+      document.addEventListener("click", this.documentCallBack);
+    },
+    documentCallBack(e) {
+      if (this.$refs.contentWrapper.contains(e.target)) {
+      } else {
+        this.close();
+      }
+    },
+    close() {
+      this.visible = false;
+      document.removeEventListener("click", this.documentCallBack);
+    },
+    open() {
+      this.visible = true;
+      setTimeout(() => {
+        this.getPosition();
+        this.listenToDocument();
+      }, 0);
+    },
   }
 };
 </script>
