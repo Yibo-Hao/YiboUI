@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <g-popover>
-        <div>come on</div>
+      <div>come on</div>
       <g-button slot="reference">click!</g-button>
     </g-popover>
   </div>
