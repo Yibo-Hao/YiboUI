@@ -4,7 +4,7 @@
       <g-tabs-nav>
         <template v-slot:items>
           <g-tabs-items tagName="vehicle">vehicle</g-tabs-items>
-          <g-tabs-items tagName="girl" >girl</g-tabs-items>
+          <g-tabs-items tagName="girl">girl</g-tabs-items>
           <g-tabs-items tagName="sports">sports</g-tabs-items>
         </template>
         <template v-slot:actions>
@@ -17,6 +17,10 @@
         <g-tabs-panel tagName="sports">sports news</g-tabs-panel>
       </g-tabs-content>
     </g-tabs>
+    <g-popover>
+      <div>come on</div>
+      <g-button slot="reference">click!</g-button>
+    </g-popover>
   </div>
 </template>
 <script>
@@ -39,8 +43,5 @@ export default {
 .app {
   display: flex;
   flex-direction: column;
-  >div{
-    margin: 1em;
-  }
 }
 </style>
