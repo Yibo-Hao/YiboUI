@@ -1,5 +1,5 @@
 <template>
-  <div class="popover" @click="Click" ref="popover">
+  <div class="popover" @click="Click">
     <div class="content-wrapper" v-if="visible" ref="contentWrapper">
       <slot></slot>
     </div>
@@ -20,7 +20,7 @@ export default {
       let { left, top } = this.$refs.triggerWrapper.getBoundingClientRect();
       this.$refs.contentWrapper.style.left = left + window.scrollX + "px";
       this.$refs.contentWrapper.style.top = top + window.scrollY + "px";
-    },00
+    },
     Click(e) {
       if (this.$refs.triggerWrapper.contains(e.target)) {
         if (this.visible === true) {
@@ -29,9 +29,6 @@ export default {
           this.open();
         }
       }
-    },
-    listenToDocument() {
-      document.addEventListener("click", this.documentCallBack);
     },
     documentCallBack(e) {
       if (this.$refs.contentWrapper.contains(e.target)) {
@@ -47,9 +44,9 @@ export default {
       this.visible = true;
       setTimeout(() => {
         this.getPosition();
-        this.listenToDocument();
+        document.addEventListener("click", this.documentCallBack);
       }, 0);
-    },
+    }
   }
 };
 </script>
