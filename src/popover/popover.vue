@@ -25,19 +25,30 @@ export default {
       });
     } else {
       this.$refs.triggerWrapper.addEventListener("mouseenter", e => {
-        this.open(e);
+        window.clearTimeout(this.timerId);
+        this.timer = setTimeout(() => {
+          this.open(e);
+        }, 150);
       });
       this.$refs.triggerWrapper.addEventListener("mouseleave", e => {
-        this.close(e);
+        window.clearTimeout(this.timerId);
+        this.timerId = setTimeout(() => {
+          this.close(e);
+        }, 150);
       });
     }
   },
   updated() {
     if (this.$refs.contentWrapper) {
       this.$refs.contentWrapper.addEventListener("mouseenter", e => {
-        this.open(e);
+        if (this.timerId) {
+          this.open(e);
+          window.clearTimeout(this.timerId);
+          this.timerId = null;
+        }
       });
       this.$refs.contentWrapper.addEventListener("mouseleave", e => {
+        window.clearTimeout(this.timerId);
         this.close(e);
       });
     }
@@ -46,7 +57,8 @@ export default {
     return {
       visible: false,
       contentWrapper: this.$refs.contentWrapper,
-      triggerWrapper: this.$refs.triggerWrapper
+      triggerWrapper: this.$refs.triggerWrapper,
+      timerId: null
     };
   },
   methods: {
@@ -108,34 +120,20 @@ export default {
         return ["click", "hover"].includes(value);
       }
     }
-  },
-  destroyed() {
-    if (this.trigger === "click") {
-      this.$refs.popover.removeEventListener("click", e => {
-        this.Click(e);
-      });
-    } else {
-      this.$refs.triggerWrapper.removeEventListener("mouseenter", e => {
-        this.open(e);
-      });
-      this.$refs.triggerWrapper.removeEventListener("mouseleave", e => {
-        this.close(e);
-      });
-    }
   }
 };
 </script>
 <style lang="scss" scoped>
 .fade-enter-active {
-  transition: 0.1s opacity ease-in 0.2s;
+  transition: 0.1s opacity ease-in;
 }
 .fade-leave-active {
-  transition: 0.1s opacity ease-out 0.2s;
+  transition: 0.1s opacity ease-out;
 }
-.fade-enter{
+.fade-enter {
   opacity: 0;
 }
-.fade-leave-to{
+.fade-leave-to {
   opacity: 0;
 }
 .popover {
