@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <g-popover>
+    <g-popover trigger="hover">
       <div>come on</div>
       <g-button slot="reference">click!</g-button>
     </g-popover>
