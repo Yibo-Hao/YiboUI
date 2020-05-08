@@ -18,6 +18,8 @@
       </g-tabs-content>
     </g-tabs>
     <g-popover>
+
+    <g-popover trigger="hover">
       <div>come on</div>
       <g-button slot="reference">click!</g-button>
     </g-popover>

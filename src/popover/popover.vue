@@ -1,13 +1,15 @@
 <template>
-  <div class="popover" @click="Click">
-    <div
-      class="content-wrapper"
-      v-if="visible"
-      ref="contentWrapper"
-      :class="{ [`position-${position}`]: true }"
-    >
-      <slot></slot>
-    </div>
+  <div class="popover" ref="popover">
+    <transition name="fade">
+      <div
+        class="content-wrapper"
+        v-if="visible"
+        ref="contentWrapper"
+        :class="{ [`position-${position}`]: true }"
+      >
+        <slot></slot>
+      </div>
+    </transition>
     <span ref="triggerWrapper" class="reference">
       <slot name="reference"></slot>
     </span>
@@ -16,19 +18,52 @@
 <script>
 export default {
   name: "yibo-popover",
+  mounted() {
+    if (this.trigger === "click") {
+      this.$refs.popover.addEventListener("click", e => {
+        this.Click(e);
+      });
+    } else {
+      this.$refs.triggerWrapper.addEventListener("mouseenter", e => {
+        this.open(e);
+      });
+      this.$refs.triggerWrapper.addEventListener("mouseleave", e => {
+        this.close(e);
+      });
+    }
+  },
+  updated() {
+    if (this.$refs.contentWrapper) {
+      this.$refs.contentWrapper.addEventListener("mouseenter", e => {
+        this.open(e);
+      });
+      this.$refs.contentWrapper.addEventListener("mouseleave", e => {
+        this.close(e);
+      });
+    }
+  },
   data() {
-    return { visible: false };
+    return {
+      visible: false,
+      contentWrapper: this.$refs.contentWrapper,
+      triggerWrapper: this.$refs.triggerWrapper
+    };
   },
   methods: {
     getPosition() {
       document.body.appendChild(this.$refs.contentWrapper);
-      let { left, top ,height} = this.$refs.triggerWrapper.getBoundingClientRect();
+      let {
+        left,
+        top,
+        height
+      } = this.$refs.triggerWrapper.getBoundingClientRect();
       if (this.position === "top") {
         this.$refs.contentWrapper.style.left = left + window.scrollX + "px";
         this.$refs.contentWrapper.style.top = top + window.scrollY + "px";
       } else if (this.position === "bottom") {
         this.$refs.contentWrapper.style.left = left + window.scrollX + "px";
-        this.$refs.contentWrapper.style.top = top + height+window.scrollY + "px";
+        this.$refs.contentWrapper.style.top =
+          top + height + window.scrollY + "px";
       }
     },
     Click(e) {
@@ -65,11 +100,30 @@ export default {
       validator(value) {
         return ["top", "bottom"].includes(value);
       }
+    },
+    trigger: {
+      type: String,
+      default: "click",
+      validator(value) {
+        return ["click", "hover"].includes(value);
+      }
     }
   }
 };
 </script>
 <style lang="scss" scoped>
+.fade-enter-active {
+  transition: 0.1s opacity ease-in 0.2s;
+}
+.fade-leave-active {
+  transition: 0.1s opacity ease-out 0.2s;
+}
+.fade-enter{
+  opacity: 0;
+}
+.fade-leave-to{
+  opacity: 0;
+}
 .popover {
   display: inline-block;
   vertical-align: top;
