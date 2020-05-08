@@ -108,6 +108,20 @@ export default {
         return ["click", "hover"].includes(value);
       }
     }
+  },
+  destroyed() {
+    if (this.trigger === "click") {
+      this.$refs.popover.removeEventListener("click", e => {
+        this.Click(e);
+      });
+    } else {
+      this.$refs.triggerWrapper.removeEventListener("mouseenter", e => {
+        this.open(e);
+      });
+      this.$refs.triggerWrapper.removeEventListener("mouseleave", e => {
+        this.close(e);
+      });
+    }
   }
 };
 </script>
