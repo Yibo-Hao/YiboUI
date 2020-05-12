@@ -66,9 +66,6 @@ export default {
   display: flex;
   flex-direction: column;
 }
-<<<<<<< HEAD
-
-=======
 .header {
   display: flex;
   justify-content: center;
@@ -93,5 +90,4 @@ export default {
   align-items: center;
   color: white;
 }
->>>>>>> 布局美化完成
 </style>
