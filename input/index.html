@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>g-input | UI</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/YiboUI/assets/css/0.styles.395d0c54.css" as="style"><link rel="preload" href="/YiboUI/assets/js/app.14dbbc87.js" as="script"><link rel="preload" href="/YiboUI/assets/js/2.25aed570.js" as="script"><link rel="preload" href="/YiboUI/assets/js/16.bcd43b59.js" as="script"><link rel="prefetch" href="/YiboUI/assets/js/10.391e4fa0.js"><link rel="prefetch" href="/YiboUI/assets/js/11.b05b64b5.js"><link rel="prefetch" href="/YiboUI/assets/js/12.b8a57583.js"><link rel="prefetch" href="/YiboUI/assets/js/13.f5f3790c.js"><link rel="prefetch" href="/YiboUI/assets/js/14.cbd31403.js"><link rel="prefetch" href="/YiboUI/assets/js/15.bade207d.js"><link rel="prefetch" href="/YiboUI/assets/js/17.3fdc3096.js"><link rel="prefetch" href="/YiboUI/assets/js/18.3a5a0945.js"><link rel="prefetch" href="/YiboUI/assets/js/19.b5f2dad8.js"><link rel="prefetch" href="/YiboUI/assets/js/3.fcec7e72.js"><link rel="prefetch" href="/YiboUI/assets/js/4.af9668a5.js"><link rel="prefetch" href="/YiboUI/assets/js/5.f6a4bce4.js"><link rel="prefetch" href="/YiboUI/assets/js/6.9ad88dda.js"><link rel="prefetch" href="/YiboUI/assets/js/7.035efc28.js"><link rel="prefetch" href="/YiboUI/assets/js/8.1eee653c.js"><link rel="prefetch" href="/YiboUI/assets/js/9.f0e082c8.js">
+    <link rel="stylesheet" href="/YiboUI/assets/css/0.styles.395d0c54.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-navbar"><!----> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/YiboUI/" aria-current="page" class="sidebar-link">YiboUI</a></li><li><a href="/YiboUI/input/" aria-current="page" class="active sidebar-link">g-input</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/YiboUI/input/#input-输入框" class="sidebar-link">Input 输入框</a></li><li class="sidebar-sub-header"><a href="/YiboUI/input/#v-model" class="sidebar-link">v-model</a></li></ul></li><li><a href="/YiboUI/button/" class="sidebar-link">g-button</a></li><li><a href="/YiboUI/tabs/" class="sidebar-link">g-tabs</a></li><li><a href="/YiboUI/popover/" class="sidebar-link">g-popover</a></li><li><a href="/YiboUI/collapse/" class="sidebar-link">g-collapse</a></li><li><a href="/YiboUI/grid/" class="sidebar-link">grid</a></li><li><a href="/YiboUI/toast/" class="sidebar-link">toast</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="input-输入框"><a href="#input-输入框" class="header-anchor">#</a> Input 输入框</h2> <p>通过鼠标或键盘输入字符</p> <!----> <div class="language-js extra-class"><pre class="language-js"><code>    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>g<span class="token operator">-</span>input<span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>g<span class="token operator">-</span>input disabled<span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>g<span class="token operator">-</span>input error<span class="token operator">=</span><span class="token string">&quot;出错&quot;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>g<span class="token operator">-</span>input readonly<span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+</code></pre></div><h2 id="v-model"><a href="#v-model" class="header-anchor">#</a> v-model</h2> <div class="language-js extra-class"><pre class="language-js"><code>        @change<span class="token operator">=</span><span class="token string">&quot;$emit('change', $event.target.value)&quot;</span>
+        @input<span class="token operator">=</span><span class="token string">&quot;$emit('input', $event.target.value)&quot;</span>
+        @focus<span class="token operator">=</span><span class="token string">&quot;$emit('focus', $event.target.value)&quot;</span>
+        @blur<span class="token operator">=</span><span class="token string">&quot;$emit('blur', $event.target.value)&quot;</span>
+</code></pre></div><p>内部监听了四个事件，这样当我们在 g-input 上使用 v-model 时，就会生效</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/YiboUI/" class="prev router-link-active">
+        YiboUI
+      </a></span> <span class="next"><a href="/YiboUI/button/">
+        g-button
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/YiboUI/assets/js/app.14dbbc87.js" defer></script><script src="/YiboUI/assets/js/2.25aed570.js" defer></script><script src="/YiboUI/assets/js/16.bcd43b59.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>toast | UI</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/YiboUI/assets/css/0.styles.395d0c54.css" as="style"><link rel="preload" href="/YiboUI/assets/js/app.14dbbc87.js" as="script"><link rel="preload" href="/YiboUI/assets/js/2.25aed570.js" as="script"><link rel="preload" href="/YiboUI/assets/js/19.b5f2dad8.js" as="script"><link rel="prefetch" href="/YiboUI/assets/js/10.391e4fa0.js"><link rel="prefetch" href="/YiboUI/assets/js/11.b05b64b5.js"><link rel="prefetch" href="/YiboUI/assets/js/12.b8a57583.js"><link rel="prefetch" href="/YiboUI/assets/js/13.f5f3790c.js"><link rel="prefetch" href="/YiboUI/assets/js/14.cbd31403.js"><link rel="prefetch" href="/YiboUI/assets/js/15.bade207d.js"><link rel="prefetch" href="/YiboUI/assets/js/16.bcd43b59.js"><link rel="prefetch" href="/YiboUI/assets/js/17.3fdc3096.js"><link rel="prefetch" href="/YiboUI/assets/js/18.3a5a0945.js"><link rel="prefetch" href="/YiboUI/assets/js/3.fcec7e72.js"><link rel="prefetch" href="/YiboUI/assets/js/4.af9668a5.js"><link rel="prefetch" href="/YiboUI/assets/js/5.f6a4bce4.js"><link rel="prefetch" href="/YiboUI/assets/js/6.9ad88dda.js"><link rel="prefetch" href="/YiboUI/assets/js/7.035efc28.js"><link rel="prefetch" href="/YiboUI/assets/js/8.1eee653c.js"><link rel="prefetch" href="/YiboUI/assets/js/9.f0e082c8.js">
+    <link rel="stylesheet" href="/YiboUI/assets/css/0.styles.395d0c54.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-navbar"><!----> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/YiboUI/" aria-current="page" class="sidebar-link">YiboUI</a></li><li><a href="/YiboUI/input/" class="sidebar-link">g-input</a></li><li><a href="/YiboUI/button/" class="sidebar-link">g-button</a></li><li><a href="/YiboUI/tabs/" class="sidebar-link">g-tabs</a></li><li><a href="/YiboUI/popover/" class="sidebar-link">g-popover</a></li><li><a href="/YiboUI/collapse/" class="sidebar-link">g-collapse</a></li><li><a href="/YiboUI/grid/" class="sidebar-link">grid</a></li><li><a href="/YiboUI/toast/" aria-current="page" class="active sidebar-link">toast</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/YiboUI/toast/#toast组件" class="sidebar-link">toast组件</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="toast组件"><a href="#toast组件" class="header-anchor">#</a> toast组件</h2> <!----> <div class="language-js extra-class"><pre class="language-js"><code>    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>h2<span class="token operator">&gt;</span>中间弹出<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div @click<span class="token operator">=</span><span class="token string">&quot;toast('这里是Toast',{position:'middle'})&quot;</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>g<span class="token operator">-</span>button <span class="token operator">&gt;</span>按钮<span class="token operator">&lt;</span><span class="token operator">/</span>g<span class="token operator">-</span>button<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>h2<span class="token operator">&gt;</span>上方弹出<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div @click<span class="token operator">=</span><span class="token string">&quot;toast('这里是Toast',{position:'top'})&quot;</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>g<span class="token operator">-</span>button <span class="token operator">&gt;</span>按钮<span class="token operator">&lt;</span><span class="token operator">/</span>g<span class="token operator">-</span>button<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>h2<span class="token operator">&gt;</span>下方弹出<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div @click<span class="token operator">=</span><span class="token string">&quot;toast('这里是Toast',{position:'bottom'})&quot;</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>g<span class="token operator">-</span>button <span class="token operator">&gt;</span>按钮<span class="token operator">&lt;</span><span class="token operator">/</span>g<span class="token operator">-</span>button<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>h2<span class="token operator">&gt;</span>关闭按钮<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div @click<span class="token operator">=</span>&quot;<span class="token function">toast</span><span class="token punctuation">(</span><span class="token string">'这里是Toast'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>closeButton<span class="token operator">:</span><span class="token punctuation">{</span>text<span class="token operator">:</span><span class="token string">'知道了'</span><span class="token punctuation">,</span><span class="token function">callback</span> <span class="token punctuation">(</span><span class="token parameter">toast</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+             toast<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+         <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span>&quot;<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>g<span class="token operator">-</span>button<span class="token operator">&gt;</span>关闭按钮<span class="token operator">&lt;</span><span class="token operator">/</span>g<span class="token operator">-</span>button<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/YiboUI/grid/" class="prev">
+        grid
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/YiboUI/assets/js/app.14dbbc87.js" defer></script><script src="/YiboUI/assets/js/2.25aed570.js" defer></script><script src="/YiboUI/assets/js/19.b5f2dad8.js" defer></script>
+  </body>
+</html>
